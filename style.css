@@ -1,0 +1,36 @@
+.ball{
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+
+}
+
+.input-area{
+    width: 220px;
+    height: 20px;
+    border: 1px solid lightgray;
+    border-radius: 10px ;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.btn{
+    width: 60px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.btn:hover{
+    background-color: rgb(202, 205, 206);
+    color: rgb(97, 94, 94);
+    cursor: pointer;
+}
+
