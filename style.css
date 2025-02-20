@@ -1,3 +1,31 @@
+body{
+    
+    text-align: center;
+    margin: 0px;
+    background-image: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk2MC1uaW5nLTMwLmpwZw.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+   flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.title-name{
+    margin-bottom: 70px;
+    font-family:fantasy;
+    color: rgb(228, 229, 233);
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+
+
+
+
 .ball{
     display: inline-block;
     border: 1px solid black;
@@ -14,17 +42,18 @@
 }
 
 .input-area{
-    width: 220px;
-    height: 20px;
-    border: 1px solid lightgray;
-    border-radius: 10px ;
+    width: 270px;
+    height: 30px;
+    border: 1px solid rgb(150, 147, 147);
+    border-radius: 20px ;
     text-align: center;
     margin-right: 15px;
+    margin-bottom: 20px;
 }
 
 .btn{
     width: 60px;
-    border: 1px solid lightgray;
+    border: 1px solid rgb(150, 147, 147);ray;
     border-radius: 10px;
 }
 
