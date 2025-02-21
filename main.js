@@ -1,18 +1,10 @@
 const form = document.querySelector("form")
 const result = document.querySelector("result")
 const bonus = document.querySelector("bonus")
-const candidate = []
 
 form.addEventListener("submit",(event)=>{
     event.preventDefault();
     const string = event.target.input.value
-   
-  form.addEventListener("submit",(event)=>{
-    for(let i=1;i<46;i++){
-        candidate.push(i)
-    }
-    const candidate = Array(45).fill().map((v,i) =>i+1)
-  })
     
     if(!string.trim()){
         return alert("숫자를 입력하시요.")
@@ -28,6 +20,22 @@ form.addEventListener("submit",(event)=>{
     if(myNumbers.find((v)=>v >45 || v<1)){
         return alert("1부터 45까지의 값만 입력할 수 있습니다..")
     }
+
+
+    const candidate = Array[45].fill().map((v,i)=>i+1);
+
+    const shuffle = [];
+    while(candidate.length >0){
+        const random =  Math.floor(Math.random()*candidate.length)
+        const spliceArray = candidate.splice(random,1)
+        const value = spliceArray[0]
+        shuffle.push(value)
+    }
+    console.log(shuffle)
+    const winBalls = shuffle.slice(0,6).sort((a,b)=>a-b)
+    const bonus = shuffle[6]
+    console.log(winBalls,bonus)    
+
 })
 
 
