@@ -1,12 +1,18 @@
 const form = document.querySelector("form")
 const result = document.querySelector("result")
 const bonus = document.querySelector("bonus")
+const candidate = []
 
 form.addEventListener("submit",(event)=>{
     event.preventDefault();
     const string = event.target.input.value
    
-  
+  form.addEventListener("submit",(event)=>{
+    for(let i=1;i<46;i++){
+        candidate.push(i)
+    }
+    const candidate = Array(45).fill().map((v,i) =>i+1)
+  })
     
     if(!string.trim()){
         return alert("숫자를 입력하시요.")
