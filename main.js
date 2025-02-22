@@ -56,15 +56,25 @@ $form.addEventListener("submit",(event) =>{
     console.log(shuffle)
     const winBalls = shuffle.slice(0,6).sort((a,b)=>a-b)
     const bonus = shuffle[6]
-    console.log(winBalls,bonus)    
-
+    console.log(winBalls,bonus)   
+    
+for(let i=0; i<winBalls.length;i++){
     setTimeout(() => {
         const $ball = document.createElement("div")
         $ball.className = "ball"
-        $ball.textContent = winBalls[0]
+        $ball.textContent = winBalls[i]
         $result.appendChild($ball)
         
-    }, 1000);
+    }, 1000*(i+1));
+}
+setTimeout(() => {
+    const $ball = document.createElement("div")
+    $ball.className = "ball"
+    $ball.textContent = bonus
+    $bonus.appendChild($ball)
+    
+}, 7000);
+  
 });
 
 
