@@ -26,7 +26,25 @@ const $form = document.querySelector("#form");
 const $result = document.querySelector("#result");
 const $bonus = document.querySelector("#bonus");
 
-$form.addEventListener("submit",(event) =>{
+function drawBall(number,$parent){
+    const $ball = document.createElement("div")
+    $ball.className = "ball"
+    $ball.textContent = number
+    $parent.appendChild($ball)
+
+}
+
+const setTimeoutPromise = (ms)=> new Promise((resolve,reject)=>{
+
+    setTimeout(resolve,ms)
+}) 
+
+
+
+
+
+
+$form.addEventListener("submit",async (event) =>{
     event.preventDefault();
     const string = event.target.input.value;
     if(!string.trim()){
@@ -58,25 +76,24 @@ $form.addEventListener("submit",(event) =>{
     const bonus = shuffle[6]
     console.log(winBalls,bonus)   
     
+
+
+
+
+
 for(let i=0; i<winBalls.length;i++){
-    setTimeout(() => {
-        const $ball = document.createElement("div")
-        $ball.className = "ball"
-        $ball.textContent = winBalls[i]
-        $result.appendChild($ball)
+    await setTimeoutPromise(1000)
+      drawBall(winBalls[i],$result)
         
-    }, 1000*(i+1));
 }
-setTimeout(() => {
-    const $ball = document.createElement("div")
-    $ball.className = "ball"
-    $ball.textContent = bonus
-    $bonus.appendChild($ball)
+    await setTimeoutPromise(1000)
+    drawBall(bonus,$bonus)
     
-}, 7000);
+
+
+
   
 });
-
 
 
 
