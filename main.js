@@ -88,6 +88,33 @@ for(let i=0; i<winBalls.length;i++){
 }
     await setTimeoutPromise(1000)
     drawBall(bonus,$bonus)
+
+await setTimeoutPromise(0)
+
+let count =0;
+myNumbers.forEach((my)=>{
+if(winBalls.includes(my)){
+    count++
+}
+})
+
+if(count ===6){
+    alert("1등 로또 당첨을 축하드립니다!")
+}else if(count ===5){
+    if(myNumbers.includes(bonus)){
+        alert("보너스 공으로 2등 로또 당첨을 축하드립니다! ")
+    }else{
+        alert("3등 로또 당첨을 축하드립니다!")
+    }
+}else if(count ===4){
+    alert("4등 5만원 당첨을 축하드립니다!")
+}else if(count ===3){
+    alert("5등 5천원 당첨을 축하드립니다!")
+}else{
+    alert("낙첨입니다.")
+}
+
+
     
 
 
