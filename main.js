@@ -26,9 +26,31 @@ const $form = document.querySelector("#form");
 const $result = document.querySelector("#result");
 const $bonus = document.querySelector("#bonus");
 
+
+function colorize(number,$tag){
+    if(number<10){
+        $tag.style.color = 'white'
+           $tag.style.backgroundColor = "red"
+    }else if(number<20){
+        $tag.style.backgroundColor = "orange"
+    }else if(number<30){
+        $tag.style.backgroundColor = "yellow"
+    }else if(number<40){
+        $tag.style.backgroundColor = "blue"
+        $tag.style.color = 'white'
+    }else{
+         $tag.style.backgroundColor = "green"
+        $tag.style.color = 'white'
+
+    }
+}
+
+
+
 function drawBall(number,$parent){
     const $ball = document.createElement("div")
     $ball.className = "ball"
+    colorize(number,$ball)
     $ball.textContent = number
     $parent.appendChild($ball)
 
@@ -40,12 +62,22 @@ const setTimeoutPromise = (ms)=> new Promise((resolve,reject)=>{
 }) 
 
 
-
-
+let clickable = true;
 
 
 $form.addEventListener("submit",async (event) =>{
     event.preventDefault();
+
+    if(!clickable){
+        return;
+    }
+clickable = false
+$result.innerHTML = "당첨 숫자 :"
+$bonus.innerHTML = "보너스 숫자 :"
+
+
+
+
     const string = event.target.input.value;
     if(!string.trim()){
         return alert("숫자를 입력하세요.")
@@ -65,7 +97,7 @@ $form.addEventListener("submit",async (event) =>{
 
     const candidate = Array(45).fill().map((v,i) => i+1);
     const shuffle = []
-    while(candidate.length>0){
+    while(candidate.length>0){ 
         const random =  Math.floor(Math.random()*candidate.length)
         const spliceArray = candidate.splice(random,1)
         const value = spliceArray[0]
@@ -115,8 +147,7 @@ if(count ===6){
 }
 
 
-    
-
+clickable = true;
 
 
   
