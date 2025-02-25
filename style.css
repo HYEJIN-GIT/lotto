@@ -55,7 +55,11 @@ body{
     margin-right: 15px;
     margin-bottom: 40px;
 }
-
+.line{
+    
+    display: flex;
+    justify-content: center;
+}
 .btn{
    
     width: 60px;
@@ -92,10 +96,10 @@ body{
      
     }
     .btn{
-        margin-top:28px;
+       
         width: 50px;
         font-size: 12px;
-        margin-bottom: 30px;
+        
     }
  
     
